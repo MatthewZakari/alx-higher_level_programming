@@ -1,3 +1,25 @@
 #!/bin/bash
-python3 -m compileall $PYFILE -b
-Give feedback
+
+# Check if the PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+	echo "Error: PYFILE environment variable not set."
+	exit 1
+fi
+
+# Extract the filename without extension
+filename=$(basename "$PYFILE")
+filename_noext="${filename%.*}"
+
+# Set the output filename
+output_filename="$filename_noext.pyc"
+
+# Compile the Python script
+python -m compileall "$PYFILE"
+
+# Move the compiled file to the desired output filename
+mv "__pycache__/$filename_noext.pyc" "$output_filename"
+
+# Clean up temporary __pycache__ directory
+rm -r "__pycache__"
+
+echo "Compilation complete. Output filename: $output_filename"
