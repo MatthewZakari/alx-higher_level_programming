@@ -67,3 +67,46 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """
+        Calculate the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """
+        Calculate the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle.
+        """
+        return 2 * (self.__width + self.__height) if self.__width and self.__height else 0
+
+    def __str__(self):
+        """
+        Return a string representation of the rectangle.
+
+        Returns:
+            str: A string representation of the rectangle using '#'.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(['#' * self.__width] * self.__height)
+
+    def __repr__(self):
+        """
+        Return a string representation of the rectangle object.
+
+        Returns:
+            str: A string representation of the rectangle object
+                 to be able to recreate a new instance by using eval().
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Print a message when an instance of Rectangle is deleted."""
+        print("Bye rectangle...")
