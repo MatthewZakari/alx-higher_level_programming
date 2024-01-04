@@ -6,3 +6,4 @@
 0x04. Python - More Data Structures: Set, Dictionary
 0x05. Python - Exceptions
 0x06-python-classes
+0x08-python-more_classes
