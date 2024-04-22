@@ -1,5 +1,4 @@
 0x00. Python - Hello, World
-
 0x01. Python - if/else, loops, functions
 0x02. Python - import & modules
 0x03. Python - Data Structures: Lists, Tuples
@@ -14,3 +13,4 @@
 0x0C-python-almost_a_circle
 0x0D-SQL_introduction
 0x0E-SQL_more_queries
+0x12-javascript-warm_up
