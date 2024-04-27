@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     # Execute query to select all states sorted by id
-    cur.execute("SELECT DISTINCT id, name FROM states GROUP BY id, name ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all rows
     query_rows = cur.fetchall()
